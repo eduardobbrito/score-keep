@@ -9,7 +9,6 @@ export const calculatePlayerPositions = (players) => {
     if (index !== 0 && players[index-1].score > player.score) {
       rank++;
     };
-
     return {
       ...player,
       rank,
@@ -18,29 +17,24 @@ export const calculatePlayerPositions = (players) => {
   });
 };
 
-export const jakeIsTheBest = (jake, players, whoClicked) => {
-
+export const jakeIsTheBest = (jake, whoClicked) => {
   if (whoClicked.score >= jake.score && whoClicked.name !=="Jake the Wizard") {
     Players.update(jake._id,{$inc:{score: 2}});
   }
-
-  if (whoClicked.score == jake.score) {
-    Players.update(jake._id,{$inc:{score: 1}});
-  }
-
-  return 0;
-
-  // return players.map((player, index) => {
-  //   if(player._id !== "tEELh7tB7GeeKpy2W") {
-  //     if(player.score >= jake.score) {
-  //       Players.update(jake._id,{$inc:{score: 1}});
-  //     }
-  //   }
-  // });
 };
 
+export const preventJakeFall = (players, whoClicked) => {
+  if (whoClicked.name =="Jake the Wizard") {
+    return players.map((player, index) => {
+      if (player.score == whoClicked.score && player.name !== whoClicked.name) {
+        Players.update(whoClicked._id,{$inc:{score: 1}});
+      }
+    })
+  }
+}
+
 export const iceKingSucks = (iceKing, whoClicked) => {
-  if(whoClicked._id !== "s9v7HW2HoxBjvfbWA"){
+  if(whoClicked.name !== "Ice King"){
     Players.update(iceKing._id,{$inc:{score: -1}});
   }
 }

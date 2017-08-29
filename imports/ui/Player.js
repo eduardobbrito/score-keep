@@ -1,5 +1,5 @@
 import React from 'react';
-import {Players, jakeIsTheBest, iceKingSucks} from './../api/players';
+import {Players, jakeIsTheBest, preventJakeFall, iceKingSucks} from './../api/players';
 import PropTypes from 'prop-types';
 
 export default class Player extends React.Component{
@@ -69,12 +69,13 @@ export default class Player extends React.Component{
           <div className="player__actions">
             <button className="button button--round" onClick={() => {
               Players.update(this.props.player._id,{$inc:{score: -1}});
-              jakeIsTheBest(jake, players, this.props.player);
+              jakeIsTheBest(jake, this.props.player);
+              preventJakeFall(players, this.props.player)
               iceKingSucks(iceKing, this.props.player);
             }}>-1</button>
             <button className="button button--round" onClick={() => {
               Players.update(this.props.player._id,{$inc:{score: 1}});
-              jakeIsTheBest(jake, players, this.props.player);
+              jakeIsTheBest(jake, this.props.player);
               iceKingSucks(iceKing, this.props.player);
             }}>+1</button>
             {this.renderRemoveButton()}
