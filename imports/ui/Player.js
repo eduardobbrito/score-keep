@@ -21,7 +21,7 @@ export default class Player extends React.Component{
   }
 
   renderRemoveButton(){
-    if (this.props.player._id == "tEELh7tB7GeeKpy2W" || this.props.player._id == "s9v7HW2HoxBjvfbWA"){
+    if (this.props.player.name == "Jake the Wizard" || this.props.player.name == "Ice King"){
       return <button className="button button--round">--</button>
     } else {
       return <button className="button button--round" onClick={() => {

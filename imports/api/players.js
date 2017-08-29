@@ -20,7 +20,7 @@ export const calculatePlayerPositions = (players) => {
 
 export const jakeIsTheBest = (jake, players, whoClicked) => {
 
-  if (whoClicked.score >= jake.score && whoClicked._id !=="tEELh7tB7GeeKpy2W") {
+  if (whoClicked.score >= jake.score && whoClicked.name !=="Jake the Wizard") {
     Players.update(jake._id,{$inc:{score: 2}});
   }
 
