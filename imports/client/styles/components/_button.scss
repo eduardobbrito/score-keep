@@ -1,0 +1,51 @@
+.button{
+  background: transparent;
+  border: 1px solid #555;
+  color: #555;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 1.3rem;
+  outline: none;
+  padding: 1.3rem;
+  transition: background .2s ease,
+              transform .2s ease;
+
+  &:hover, &:focus{
+    background: #e8e8e8;
+  }
+
+  &:active{
+    background: #ccc;
+    transform: scale(1.1);
+  }
+}
+
+.button--round{
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.button--add-player{
+  padding: 1.3rem;
+}
+
+@media (max-width: 380px){
+  .button{
+    padding: 0.3rem;
+  }
+  .button--round{
+    width: 3rem;
+    height: 3rem;
+  }
+  .button--add-player{
+    padding: 1.3rem;
+  }
+}
+
+@media (max-width: 345px){
+  .button--add-player{
+    padding:0;
+  }
+}

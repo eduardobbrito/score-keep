@@ -1,0 +1,58 @@
+.item{
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  margin-bottom: 1.3rem;
+  padding: 1.3rem;
+}
+
+.item--jake{
+  background: $orange !important;
+  border-color: $orange-alt !important;
+
+  img{
+    border: 1px solid $orange-alt !important;
+  }
+}
+
+.item--ice-king{
+  background: $icekingblue !important;
+  border-color: $icekingblue-alt !important;
+
+  img{
+    border: 1px solid $icekingblue-alt !important;
+  }
+}
+
+.item--position-1{
+  background: $green;
+  border-color:$green-alt;
+
+  img{
+    border: 1px solid $green-alt;
+  }
+}
+
+.item--position-2{
+  background: $blue;
+  border-color:$blue-alt;
+
+  img{
+    border: 1px solid $blue-alt;
+  }
+}
+
+.item--position-3{
+  background: $red;
+  border-color:$red-alt;
+
+  img{
+    border: 1px solid $red-alt;
+  }
+}
+
+.item__message{
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+}
